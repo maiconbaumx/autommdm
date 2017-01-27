@@ -410,7 +410,7 @@ if ($auto_scaling)
 my %params = ();
 $params{'Input'} = {};
 my $input_ref = $params{'Input'}; 
-$input_ref->{'Namespace'} = "System/Linux";
+$input_ref->{'Namespace'} = "Linux/DiskAndMemory";
 
 #
 # Adds a new metric to the request
@@ -456,7 +456,7 @@ sub add_metric
   my %dims = ();
   my %xdims = ();
   $xdims{'MountPath'} = $mount if $mount;
-  $xdims{'Filesystem'} = $filesystem if $filesystem;
+#  $xdims{'Filesystem'} = $filesystem if $filesystem;
   
   my $auto_scaling_only = defined($auto_scaling) && $auto_scaling == AGGREGATED_ONLY;
   my $aggregated_only = defined($aggregated) && $aggregated == AGGREGATED_ONLY;
